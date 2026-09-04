@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xunlei-agent"
+version = "1.0.0"
+description = "迅雷网盘 (Xunlei Drive) Linux/Windows 自动化工具、WebDAV 挂载服务与 AI Agent 协议套件"
+readme = "README.md"
+authors = [{ name = "kemomimi520" }]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Communications :: File Sharing",
+    "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+    "requests>=2.28.0",
+    "playwright>=1.40.0",
+]
+
+[project.scripts]
+xunlei-agent = "xunlei_agent.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/kemomimi520/xunlei-agent"
+Repository = "https://github.com/kemomimi520/xunlei-agent.git"

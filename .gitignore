@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Xunlei Agent local credentials & states (NEVER COMMIT)
+state.json
+config.json
+*.session
+*.token
+~/.config/xunlei/
+.config/
+
+# Downloads & local media
+downloads/
+*.mp4
+*.apk
+*.zip
+*.tar.gz
+*.iso
+*.png
+*.jpg
+*.jpeg
+
+# Logs & temp files
+*.log
+*.tmp
+.tempmediaStorage/
+
+# Research drafts & experiment scratchpads
+experiments/
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
