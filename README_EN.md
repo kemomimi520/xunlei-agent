@@ -14,28 +14,28 @@ Provides a **standard WebDAV mount server (seamlessly compatible with OpenList, 
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
-- 🌐 **OpenList / AList Native WebDAV Mounting (302 Redirect)**:
+- **OpenList / AList Native WebDAV Mounting (302 Redirect)**:
   - Built-in lightweight WebDAV server (`xunlei-agent webdav`).
   - **Zero Captcha Pain**: No need to manually extract short-lived `x-captcha-token` via browser DevTools; sessions are transparently maintained and refreshed.
   - **302 Direct CDN Streaming**: Media playback and downloads redirect directly to official high-speed CDN nodes with zero intermediate bandwidth or CPU overhead.
   - **In-Memory Metadata Cache**: Lightning-fast directory listing and browsing.
-- ⚡ **Share Link Auto-Transfer & Download (`fetch`)**:
+- **Share Link Auto-Transfer & Download (`fetch`)**:
   - Automatically handles share links and passwords.
   - Cloud transfer -> Extract official CDN links -> 16-connection concurrent download.
   - **Differential Cleanup Guard**: Cleans up ONLY newly transferred files to reclaim cloud quota without touching pre-existing data.
-- 🚀 **Dual-Engine Adaptive Downloader**:
+- **Dual-Engine Adaptive Downloader**:
   - Automatically prefers `aria2c` with 16 connections.
   - Seamlessly falls back to native Python multi-threaded HTTP Range downloading when `aria2c` is not installed.
-- 🧠 **Model Skill Native Integration**:
+- **Model Skill Native Integration**:
   - Comes with standard `SKILL.md` ready to plug into Cursor, Claude Code, Antigravity, etc.
   - Every command supports structured `--json` output.
   - Standard OpenAI / Claude Function Calling schemas built-in.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
 git clone https://github.com/kemomimi520/xunlei-agent.git
@@ -56,7 +56,7 @@ xunlei-agent login --token "<your_access_token>" --refresh "<your_refresh_token>
 
 ---
 
-## 💻 WebDAV Server (Mount to OpenList / AList)
+## WebDAV Server (Mount to OpenList / AList)
 
 ```bash
 # Start WebDAV server on 0.0.0.0:8080/dav
@@ -76,13 +76,13 @@ xunlei-agent webdav --port 8080 --user admin --password mypassword --path /dav
 
 ---
 
-## 🤖 Model Skill & Python Usage
+## Model Skill & Python Usage
 
 ### Integrating with AI Coding Models (Cursor / Claude Code / Antigravity)
 Copy or link `skills/xunlei-agent` to your assistant's skill directory. The model can automatically execute transfers, space checks, and downloads via natural language.
 
 ---
 
-## 📄 License
+## License
 
 Distributed under the [MIT License](LICENSE).

@@ -14,28 +14,28 @@
 
 ---
 
-## 🌟 核心特性
+## 核心特性
 
-- 🌐 **OpenList / AList 极速挂载 (WebDAV 302 重定向)**：
+- **OpenList / AList 极速挂载 (WebDAV 302 重定向)**：
   - 内置标准 WebDAV 服务端（`xunlei-agent webdav`），一键提供挂载接口。
   - **彻底解决痛点**：无需每次手动打开 F12 抓取易失效的 `x-captcha-token`，后台自动维护持久化会话与续期。
   - **302 直链高速重定向**：媒体播放与文件下载直连迅雷官方全国 CDN 高速节点，**零中转带宽消耗、零 CPU 占用**！
   - **多级内存元数据缓存**：目录快速秒开，杜绝重复调用浏览器的等待延迟。
-- ⚡ **分享链接一键转存与高速下载 (`fetch`)**：
+- **分享链接一键转存与高速下载 (`fetch`)**：
   - 自动解析分享链接（支持提取码）。
   - 云端秒级转存 -> 提取真实 CDN 直链 -> 16 线程并发高速下载。
   - **差异化精准清理防护**：下载后可自动清理临时文件释放空间，且**仅清理本次转存的新文件**，绝不误伤网盘原有数据。
-- 🚀 **双引擎自适应高速下载器 (`downloader`)**：
+- **双引擎自适应高速下载器 (`downloader`)**：
   - 优先调用 `aria2c` 16 线程高速下载；
   - 环境无 `aria2c` 时，自动平滑切入**原生 Python HTTP Range 多线程分片并发**，全速跑满带宽。
-- 🧠 **大模型 Skill 原生支持**：
+- **大模型 Skill 原生支持**：
   - 自带标准 `SKILL.md`，可直接复制或导入至 Cursor / Claude Code / Antigravity 等 AI 编程助手。
   - 让模型能够自主理解自然语言并驱动迅雷网盘执行查询、转存与下载。
   - 所有 CLI 命令均支持 `--json` 机器格式输出，内置标准 OpenAI Function Calling Schema。
 
 ---
 
-## 🚀 快速上手
+## 快速上手
 
 ### 1. 安装环境
 
@@ -61,7 +61,7 @@ xunlei-agent login --token "<your_access_token>" --refresh "<your_refresh_token>
 
 ---
 
-## 💻 命令行使用指南
+## 命令行使用指南
 
 ### 1. 启动 WebDAV 服务（挂载到 OpenList / AList / 影视播放器）
 
@@ -73,7 +73,7 @@ xunlei-agent webdav
 xunlei-agent webdav --port 8080 --user admin --password mypassword --path /dav
 ```
 
-#### 📌 OpenList / AList 挂载配置步骤：
+#### OpenList / AList 挂载配置步骤：
 1. 打开 OpenList / AList 管理后台 -> 点击 **【存储】** -> **【添加】**。
 2. **驱动**：选择 `WebDAV`。
 3. **挂载路径**：填写 `/迅雷云盘`。
@@ -116,7 +116,7 @@ xunlei-agent fetch "https://pan.xunlei.com/s/xxxx" --pwd "myjp" --out "/data/dow
 
 ---
 
-## 🤖 模型 Skill 与 Python 调用
+## 模型 Skill 与 Python 调用
 
 ### 1. 接入 AI 模型（Cursor / Claude Code / Antigravity 等）
 仓库根目录下包含标准的 [`SKILL.md`](SKILL.md) 与 [`skills/xunlei-agent/`](skills/xunlei-agent/) 目录。
@@ -146,6 +146,6 @@ schema = tool.get_tool_schema()
 
 ---
 
-## 📄 开源许可证
+## 开源许可证
 
 本项目基于 [MIT License](LICENSE) 协议开源。
