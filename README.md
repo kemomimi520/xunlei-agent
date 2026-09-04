@@ -1,16 +1,16 @@
-# Xunlei Cloud Agent (迅雷网盘全能挂载与自动化工具)
+# 迅雷网盘转存、下载与 WebDAV 挂载服务
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white" alt="Python 3.9+">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License MIT">
   <img src="https://img.shields.io/badge/WebDAV-302_Redirect-blue.svg" alt="WebDAV 302">
   <img src="https://img.shields.io/badge/Mount-OpenList%20%7C%20AList-orange.svg" alt="OpenList/AList">
-  <img src="https://img.shields.io/badge/AI_Agent-Function_Calling-purple.svg" alt="AI Agent Ready">
+  <img src="https://img.shields.io/badge/Model_Skill-Ready-purple.svg" alt="Model Skill Ready">
 </p>
 
-专为 Linux / Windows 服务器、NAS 与 AI Agent 设计的迅雷网盘（Xunlei Drive）全能工具套件。
+本项目专为**大模型 Skill 调度**、**资源转存下载**与 **OpenList / AList 等主流平台挂载**而设计。
 
-提供**标准 WebDAV 挂载服务（完美支持 OpenList / AList / RaiDrive / Infuse 等）**、**全自动分享转存下载**、**Aria2 / 多线程 Range 分片下载**及标准大模型 Function Calling 接口。
+提供**标准 WebDAV 挂载服务（完美支持 OpenList / AList / RaiDrive / Infuse 等）**、**全自动分享链接转存与高速下载**、**Aria2 / 多线程 Range 分片下载引擎**，并原生提供标准模型 Skill 接入能力。
 
 ---
 
@@ -28,9 +28,10 @@
 - 🚀 **双引擎自适应高速下载器 (`downloader`)**：
   - 优先调用 `aria2c` 16 线程高速下载；
   - 环境无 `aria2c` 时，自动平滑切入**原生 Python HTTP Range 多线程分片并发**，全速跑满带宽。
-- 🤖 **AI Agent / 大模型原生友好**：
-  - 所有 CLI 命令均支持 `--json` 输出。
-  - 提供标准 OpenAI Function Calling JSON Schema，大模型可直接接入作为 Tool 使用。
+- 🧠 **大模型 Skill 原生支持**：
+  - 自带标准 `SKILL.md`，可直接复制或导入至 Cursor / Claude Code / Antigravity 等 AI 编程助手。
+  - 让模型能够自主理解自然语言并驱动迅雷网盘执行查询、转存与下载。
+  - 所有 CLI 命令均支持 `--json` 机器格式输出，内置标准 OpenAI Function Calling Schema。
 
 ---
 
@@ -60,9 +61,9 @@ xunlei-agent login --token "<your_access_token>" --refresh "<your_refresh_token>
 
 ---
 
-## 💻 命令行 (CLI) 使用指南
+## 💻 命令行使用指南
 
-### 1. 启动 WebDAV 服务（挂载到 OpenList / AList）
+### 1. 启动 WebDAV 服务（挂载到 OpenList / AList / 影视播放器）
 
 ```bash
 # 默认启动于 0.0.0.0:8080/dav（免密访问）
@@ -82,7 +83,7 @@ xunlei-agent webdav --port 8080 --user admin --password mypassword --path /dav
 
 ---
 
-### 2. 基础网盘管理
+### 2. 网盘文件管理与下载
 
 ```bash
 # 查询云盘容量
@@ -93,7 +94,7 @@ xunlei-agent space --json
 xunlei-agent ls
 xunlei-agent ls <folder_id> --limit 50 --json
 
-# 下载云盘中已有文件（按文件 ID）
+# 下载云盘中已有文件（按文件 ID，支持多线程并发）
 xunlei-agent download <file_id> --out "/data/downloads"
 
 # 删除文件与清空回收站
@@ -115,8 +116,13 @@ xunlei-agent fetch "https://pan.xunlei.com/s/xxxx" --pwd "myjp" --out "/data/dow
 
 ---
 
-## 🤖 Python SDK 与 AI Agent 集成
+## 🤖 模型 Skill 与 Python 调用
 
+### 1. 接入 AI 模型（Cursor / Claude Code / Antigravity 等）
+仓库根目录下包含标准的 [`SKILL.md`](SKILL.md) 与 [`skills/xunlei-agent/`](skills/xunlei-agent/) 目录。
+- **Claude Code / Cursor / Antigravity**：将 `skills/xunlei-agent` 放入您的技能目录中，AI 模型即可在对话中自主识别并调用 `xunlei-agent` 帮助您转存和拉取外部资源。
+
+### 2. Python SDK 调用示例
 ```python
 from xunlei_agent import XunleiAgentTool
 
@@ -134,7 +140,7 @@ result = tool.fetch_and_download(
     auto_clean_drive=True
 )
 
-# 3. 获取 OpenAI Function Calling Schema
+# 3. 获取 OpenAI Function Calling Schema（供大模型工具注册）
 schema = tool.get_tool_schema()
 ```
 

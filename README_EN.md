@@ -1,16 +1,16 @@
-# Xunlei Cloud Agent (Xunlei Drive WebDAV & Automation Toolkit)
+# Xunlei Pan - Transfer, Download & WebDAV Mount
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white" alt="Python 3.9+">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License MIT">
   <img src="https://img.shields.io/badge/WebDAV-302_Redirect-blue.svg" alt="WebDAV 302">
   <img src="https://img.shields.io/badge/Mount-OpenList%20%7C%20AList-orange.svg" alt="OpenList/AList">
-  <img src="https://img.shields.io/badge/AI_Agent-Function_Calling-purple.svg" alt="AI Agent Ready">
+  <img src="https://img.shields.io/badge/Model_Skill-Ready-purple.svg" alt="Model Skill Ready">
 </p>
 
-An all-in-one Xunlei Drive (迅雷云盘) toolkit engineered for Linux/Windows servers, NAS environments, and autonomous AI Agents.
+Designed for **AI Model Skills**, **resource transfers & high-speed downloads**, and **OpenList / AList storage mounting**.
 
-Provides a **standard WebDAV mount server (seamlessly compatible with OpenList, AList, RaiDrive, Infuse, and Kodi)**, **zero-intervention share transfer & high-speed downloader**, **Aria2 & multi-threaded HTTP Range chunk engine**, and standard OpenAI Function Calling tool schemas.
+Provides a **standard WebDAV mount server (seamlessly compatible with OpenList, AList, RaiDrive, Infuse, and Kodi)**, **zero-intervention share transfer & multi-thread downloader**, and out-of-the-box model skill integration.
 
 ---
 
@@ -28,7 +28,8 @@ Provides a **standard WebDAV mount server (seamlessly compatible with OpenList, 
 - 🚀 **Dual-Engine Adaptive Downloader**:
   - Automatically prefers `aria2c` with 16 connections.
   - Seamlessly falls back to native Python multi-threaded HTTP Range downloading when `aria2c` is not installed.
-- 🤖 **AI Agent First-Class Citizen**:
+- 🧠 **Model Skill Native Integration**:
+  - Comes with standard `SKILL.md` ready to plug into Cursor, Claude Code, Antigravity, etc.
   - Every command supports structured `--json` output.
   - Standard OpenAI / Claude Function Calling schemas built-in.
 
@@ -72,6 +73,13 @@ xunlei-agent webdav --port 8080 --user admin --password mypassword --path /dav
 4. **Address**: `http://127.0.0.1:8080/dav`.
 5. **Username / Password**: Enter configured credentials.
 6. **WebDAV Policy**: Select **302 Redirect** for maximum CDN performance.
+
+---
+
+## 🤖 Model Skill & Python Usage
+
+### Integrating with AI Coding Models (Cursor / Claude Code / Antigravity)
+Copy or link `skills/xunlei-agent` to your assistant's skill directory. The model can automatically execute transfers, space checks, and downloads via natural language.
 
 ---
 
