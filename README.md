@@ -8,6 +8,8 @@
   <img src="https://img.shields.io/badge/Model_Skill-Ready-purple.svg" alt="Model Skill Ready">
 </p>
 
+> **当前为测试版本，版本号 [1.0.0-beta](https://github.com/kemomimi520/xunlei-agent)，且并未大规模验证。**
+
 本项目专为**大模型 Skill 调度**、**资源转存下载**与 **OpenList / AList 等主流平台挂载**而设计。
 
 提供**标准 WebDAV 挂载服务（完美支持 OpenList / AList / RaiDrive / Infuse 等）**、**全自动分享链接转存与高速下载**、**Aria2 / 多线程 Range 分片下载引擎**，并原生提供标准模型 Skill 接入能力。

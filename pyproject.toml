@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "xunlei-agent"
-version = "1.0.0"
+version = "1.0.0-beta"
 description = "迅雷网盘 (Xunlei Drive) Linux/Windows 自动化工具、WebDAV 挂载服务与 AI Agent 协议套件"
 readme = "README.md"
 authors = [{ name = "kemomimi520" }]

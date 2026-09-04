@@ -8,7 +8,7 @@ from .core.downloader import Downloader
 from .core.webdav import XunleiWebDAVServer, run_webdav_server
 from .agent_tool import XunleiAgentTool
 
-__version__ = "1.0.0"
+__version__ = "1.0.0-beta"
 
 __all__ = [
     "XunleiAuth",

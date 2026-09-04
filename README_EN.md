@@ -8,6 +8,8 @@
   <img src="https://img.shields.io/badge/Model_Skill-Ready-purple.svg" alt="Model Skill Ready">
 </p>
 
+> **This is a beta version ([1.0.0-beta](https://github.com/kemomimi520/xunlei-agent)) and has not been widely tested in production.**
+
 Designed for **AI Model Skills**, **resource transfers & high-speed downloads**, and **OpenList / AList storage mounting**.
 
 Provides a **standard WebDAV mount server (seamlessly compatible with OpenList, AList, RaiDrive, Infuse, and Kodi)**, **zero-intervention share transfer & multi-thread downloader**, and out-of-the-box model skill integration.
